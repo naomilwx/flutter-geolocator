@@ -36,7 +36,14 @@
     
     _locationManager.desiredAccuracy = accuracy;
     _locationManager.distanceFilter = distanceFilter;
-    _locationManager.allowsBackgroundLocationUpdates = _locationOptions.requireBackgroundUpdates;
+
+
+    if (@available(iOS 9.0, *) && _locationOptions.requireBackgroundUpdates) {
+        _locationManager.requestAlwaysAuthorization();
+        _locationManager.allowsBackgroundLocationUpdates = true;
+        _locationManager.showsBackgroundLocationIndicator = true;
+        _locationManager.pausesLocationUpdatesAutomatically = false;
+    }
 }
 
 - (void)stopTask {
@@ -123,7 +130,8 @@
 
 - (void)startTask {
     [super startTask];
-    
+
+    [_locationManager startMonitoringSignificantLocationChanges];
     [_locationManager startUpdatingLocation];
 }
 

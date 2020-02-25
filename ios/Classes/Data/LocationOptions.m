@@ -13,6 +13,7 @@
     if (self) {
         self.accuracy = GeolocationAccuracyBest;
         self.distanceFilter = 0;
+        self.requireBackgroundUpdates = false;
     }
     
     return self;
@@ -35,9 +36,11 @@
         if ([arguments isKindOfClass:[NSDictionary class]]) {
             NSNumber *accuracy = arguments[@"accuracy"];
             NSNumber *distanceFilter = arguments[@"distanceFilter"];
+            NSNumber* requireBackgroundUpdates = arguments[@"requireBackgroundUpdates"];
             
             self.accuracy = (GeolocationAccuracy) accuracy.intValue;
             self.distanceFilter = distanceFilter.doubleValue;
+            self.requireBackgroundUpdates = requireBackgroundUpdates.boolValue;
         }
     }
     
