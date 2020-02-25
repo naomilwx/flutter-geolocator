@@ -20,6 +20,7 @@ typedef NS_ENUM(int, GeolocationAccuracy) {
 @interface LocationOptions : NSObject
 @property GeolocationAccuracy accuracy;
 @property CLLocationDistance distanceFilter;
+@property bool requireBackgroundUpdates;
 
 - (instancetype)initWithAccuracy:(GeolocationAccuracy)accuracy distanceFilter:(CLLocationDistance)distanceFilter;
 
