@@ -10,6 +10,7 @@ class Codec {
         'distanceFilter': locationOptions.distanceFilter,
         'forceAndroidLocationManager':
             locationOptions.forceAndroidLocationManager,
+        'requireBackgroundUpdates': locationOptions.requireBackgroundUpdates,
         'timeInterval': locationOptions.timeInterval
       };
 }
