@@ -36,6 +36,7 @@
     
     _locationManager.desiredAccuracy = accuracy;
     _locationManager.distanceFilter = distanceFilter;
+    _locationManager.allowsBackgroundLocationUpdates = _locationOptions.requireBackgroundUpdates;
 }
 
 - (void)stopTask {

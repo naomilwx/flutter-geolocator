@@ -14,7 +14,8 @@ class LocationOptions {
       {this.accuracy = LocationAccuracy.best,
       this.distanceFilter = 0,
       this.forceAndroidLocationManager = false,
-      this.timeInterval = 0});
+      this.timeInterval = 0,
+      this.requireBackgroundUpdates = false});
 
   /// Defines the desired accuracy that should be used to determine the location data.
   ///
@@ -35,4 +36,9 @@ class LocationOptions {
   ///
   /// On iOS this value is ignored since position updates based on time intervals are not supported.
   final int timeInterval;
+
+  /// Flag to indicate if background updates needs to be turned on.
+  ///
+  /// On iOS 9+ and later, background location updates must be explictly enabled in order for it to work.
+  final bool requireBackgroundUpdates;
 }

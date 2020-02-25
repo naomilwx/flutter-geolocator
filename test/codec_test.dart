@@ -8,12 +8,14 @@ void main() {
       distanceFilter: 10,
       forceAndroidLocationManager: true,
       timeInterval: 100,
+      requireBackgroundUpdates: true,
     );
     var expectedMap = <String, dynamic> {
       'accuracy': 4,
       'distanceFilter': 10,
       'forceAndroidLocationManager': true,
       'timeInterval': 100,
+      'requireBackgroundUpdates': true,
     };
 
     var actualMap = Codec.encodeLocationOptions(locationOptions);
