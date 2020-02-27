@@ -131,7 +131,6 @@
 - (void)startTask {
     [super startTask];
 
-    [_locationManager startMonitoringSignificantLocationChanges];
     [_locationManager startUpdatingLocation];
 }
 
