@@ -38,11 +38,15 @@
     _locationManager.distanceFilter = distanceFilter;
 
 
-    if (@available(iOS 9.0, *) && _locationOptions.requireBackgroundUpdates) {
+    if (_locationOptions.requireBackgroundUpdates) {
         [_locationManager requestAlwaysAuthorization];
-        _locationManager.allowsBackgroundLocationUpdates = true;
-        _locationManager.showsBackgroundLocationIndicator = true;
         _locationManager.pausesLocationUpdatesAutomatically = false;
+        if (@available(iOS 9.0, *)) {
+            _locationManager.allowsBackgroundLocationUpdates = true;
+        }
+        if (@available(iOS 11.0, *)) {
+            _locationManager.showsBackgroundLocationIndicator = true;
+        }
     }
 }
 
